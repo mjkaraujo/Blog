@@ -1,5 +1,3 @@
-from ast import AugStore
-from distutils.command.upload import upload
 from django.db import models
 from categoria.models import Categoria
 from django.contrib.auth.models import User

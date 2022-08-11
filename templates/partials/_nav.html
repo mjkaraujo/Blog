@@ -1,0 +1,34 @@
+{% load static %}
+<!--_nav.html-->
+<nav class="navbar navbar-expand-lg navbar-dark static-top" style="background:#00008B;">
+    <div class="container" style="justify-content:flex-start;">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'templates/static/imagens/mjk-100-preto.png' %}" style="width: 100px; height: 100px;" alt="Logo mjk-50-branco"></a>
+        <a class="navbar-brand" href="{% url 'index' %}" style="font-size: 46px;">Blog MJK Araujo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'post_categoria' 'cristao' %}" style="font-size: 24px;">Cristo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'post_categoria' 'tecnologia' %}" style="font-size: 24px;">Tecnologia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'post_categoria' 'musica' %}" style="font-size: 24px;">Música</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'post_categoria' 'sobre' %}" style="font-size: 24px;">Sobre</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 ml-lg-4" action="{% url 'post_busca' %}">
+                <input name="termo" value="{{ request.GET.termo }}" class="form-control mr-sm-2" type="search" placeholder="Pesquisar"
+                       aria-label="Search">
+            </form>
+        </div>
+    </div>
+</nav>
+<!--/_nav.html-->
