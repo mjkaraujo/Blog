@@ -34,13 +34,14 @@
             </p>
 
             <div class="text-right">
-                <a href="{% url 'post_detalhes' post.id %}" class="btn btn-outline-secondary">Ler mais...</a>
+                <a href="{% url 'post_detalhes' post.id %}" class="btn btn-outline-info">Ler mais...</a>
             </div>
         </div>
     </div>
     {% endfor %}
 
-
-{% include 'templates\partials\_pagination.html' %}
 </div>
+
+{% include 'partials/_pagination.html' %}
+
 {% endblock %}
