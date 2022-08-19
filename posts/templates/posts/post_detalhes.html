@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block titulo %}{{ post.titulo_post|title }} | {% endblock %}
 
@@ -63,11 +64,12 @@
             {% endfor %}
 
             {% for visible_field in form.visible_fields %}
-                <div class="form-group">
-                    {{ visible_field.label_tag }} <br>
-                    {{ visible_field }}
-                </div>
+                    {{ visible_field|as_crispy_field }}
             {% endfor %}
+
+            <div class="g-recaptcha" data-sitekey="6LeSuY4hAAAAANRSGEm48t3QdFpHtb7HXXiFDa8A
+            "></div>
+            <br/>
 
             {% include 'partials/_messages.html' %}
             <input id="envia_comentario" type="submit" class="btn btn-outline-info" value="Enviar">
