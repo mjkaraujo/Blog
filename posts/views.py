@@ -10,11 +10,12 @@ from django.contrib import messages
 class PostIndex(ListView):
     model = Post
     template_name = 'posts/index.html'
-    paginate_by = 3
+    paginate_by = 6
     context_object_name = 'posts'
 
     def get_queryset(self):
         qs = super().get_queryset()
+        qs = qs.select_related('categoria_post')
         qs = qs.order_by('-id').filter(publicado_post=True)
         qs = qs.annotate(
             numero_comentarios=Count(
